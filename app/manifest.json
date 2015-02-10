@@ -1,0 +1,33 @@
+{
+	"name": "Skype",
+	"version": "1.0.0",
+	"description": "Chat with your friends.",
+	"icons": {
+		"16": "images/icons/16x16.png",
+		"24": "images/icons/24x24.png",
+		"32": "images/icons/32x32.png",
+		"48": "images/icons/48x48.png",
+		"96": "images/icons/96x96.png",
+		"128": "images/icons/128x128.png"
+	},
+	"permissions": [
+		"notifications",
+		"webview",
+		"https://*.live.com/"
+	],
+	"webview": {
+		"partitions": [
+			{
+				"name": "skypey",
+				"accessible_resources": ["*.png", "*.js", "*.css"]
+			}
+		]
+	},
+	"app": {
+		"background": {
+			"scripts": ["app.js"]
+		}
+	},
+	"offline_enabled": false,
+	"manifest_version": 2
+}

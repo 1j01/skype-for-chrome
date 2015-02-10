@@ -1,0 +1,139 @@
+
+
+/* Jesus christ, come on. */
+.phholder {
+	/* Make it so you can't SELECT the PLACEHOLDER TEXT */
+	pointer-events: none;
+}
+/* Seriously? */
+[role="button"] > img {
+	/* Make it so you can't DRAG the SPRITESHEET out from certain "buttons" */
+	pointer-events: none;
+}
+/* Oh my god */
+.RecentConversationsControl_ConnectedTo {
+	padding-top: 0; /* Make it so you can actually click the "No thanks" link */
+}
+
+
+
+/* Remove unrelated stuff */
+
+/* "Announcing the Outlook app" (in login) */
+#brandModeTD,
+/* "Outlook" header (in login) */
+.signInHeader iframe,
+/* a boring footer (in login) */
+#footerTD,
+/* advertisements are stupid */
+#adbarContainer,
+/* I forget, but it overlapped with the main application */
+.NotificationBar.BottomBar,
+/* (+) A button to compose emails */
+#NewMessage,
+/* (weird arrow) It took me a looong time to figure out what this is, but it's an Undo button */
+#c_hiconu,
+/* [::] A menu for links to other Microsoft services */
+#c_clogoc,
+/* (gear) Settings (maybe we can bring this back when we have our own settings :) */
+#c_hiconc
+{
+	display: none !important;
+}
+
+.ContentRight > *,
+.ContentLeft > * {
+		/* display: none; makes the entire app not load */
+		visibility: hidden;
+}
+.ContentLeft:after {
+		content: ":-)";
+		margin: 15px;
+		display: block;
+		position: absolute;
+		bottom: 0;
+}
+
+/* This is Skype */
+.c_clogoimg img,
+.signInHeader {
+		background-image: url("https://skypeblogs.files.wordpress.com/2013/09/skype-logo-feb_2012_rgb_500.png") !important;
+		background-size: contain;
+		background-repeat: no-repeat;
+}
+.c_clogoimg img {
+	width: 76px !important;
+}
+.signInHeader {
+	height: 50px;
+}
+
+/* Fix the layout */
+#shellTBL {
+	width: 100% !important;
+	min-width: 460px;
+}
+#mainTD {
+	width: 460px !important;
+}
+
+#sidebar,
+.ModernConversationHistoryControl,
+.ModernConversationControlBottom {
+		width: 100% !important;
+}
+.ModernConversationHistoryItem {
+		width: calc(100% - 60px) !important;
+}
+/* They used !important here (*sigh*) */
+.ModernConversationInputControl_TextBox.ModernConversationInputControl_TextBox.ModernConversationInputControl_TextBox.ModernConversationInputControl_TextBox {
+		width: calc(100% - 75px) !important;
+}
+/* Fix the layout for emoticons */
+.EmoticonLaunchImage {
+		position: fixed !important;
+		right: 25px !important;
+		bottom: 0px !important;
+}
+.ModernConversationControl_EmoticonPanel {
+		max-width: 500px;
+		right: 15px;
+}
+
+/* Make the chat look a little nicer */
+#sidebar {
+	background: white;
+}
+
+.ModernConversationHistoryItem {
+	border-radius: 4px;
+}
+
+.t_received.t_received.t_received.t_received.t_received.t_received {
+	background-color: #C7EDFC !important;
+		color: #000 !important;
+}
+.t_received_pointer.t_received_pointer.t_received_pointer.t_received_pointer {
+		border-top-color: #C7EDFC !important;
+}
+.t_received.t_received.t_received.t_received a {
+		color: #0072C6;
+}
+
+.t_sent.t_sent.t_sent.t_sent.t_sent {
+	background-color: #E5F7FD !important;
+}
+.t_sent_pointer.t_sent_pointer.t_sent_pointer.t_sent_pointer {
+	border-top-color: #E5F7FD !important;
+}
+
+/* They use !important; I have to use repetition */
+
+
+/* Let's try and invert the header */
+.t_hdbg {
+	background: white !important;
+}
+.t_hdbg, .t_hdbg * {
+	color: black !important;
+}
