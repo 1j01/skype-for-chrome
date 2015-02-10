@@ -1,0 +1,20 @@
+
+
+/* Jesus christ, come on. */
+.phholder {
+	/* Make it so you can't SELECT the PLACEHOLDER TEXT */
+	pointer-events: none;
+}
+
+/* Seriously? */
+[role="button"] > img {
+	/* Make it so you can't DRAG the SPRITESHEET out from certain "buttons" */
+	pointer-events: none;
+}
+
+/* Oh my god */
+.RecentConversationsControl_ConnectedTo {
+	/* Make it so you can actually click the "No thanks" link */
+	padding-top: 0;
+}
+

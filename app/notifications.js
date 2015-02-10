@@ -2,27 +2,6 @@
 console.log("notifications.js got injected");
 
 var skypeify = function(){
-//	var toggleChat = function(){
-		/*
-		// This isn't actually a button. It's an anchor (<a>) with role="button"
-		// We can't just do .click() because they're not even fucking listening to click events
-		// This ""button"" handles click events like so: onclick="return false;return false"
-		// Yeah. fucking brilliant
-		// And it's not like it's just an accessability issue; the ""button"" is shitty
-		// You can open it by right-mouse-downing on it
-		
-		var button = document.querySelector("#c_hiconm");
-
-		var event = document.createEvent('Event');
-		event.initEvent('mousedown', true, true);
-
-		button.dispatchEvent(event);
-		*/
-		
-//		$ToggleSidebar();
-//	};
-//	toggleChat();
-	
 	
 	document.querySelector("#c_hiconm").style.display = "none";
 	var tryToShowTheChat = function(){

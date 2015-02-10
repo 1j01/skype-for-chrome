@@ -1,0 +1,46 @@
+
+/* Fix the layout */
+/* Off-center login screen */
+#shellTBL {
+	width: 100% !important;
+	min-width: 460px;
+}
+#mainTD {
+	width: 460px !important;
+}
+/* Make the chat fluid width */
+#sidebar,
+.ModernConversationHistoryControl,
+.ModernConversationControlBottom {
+		width: 100% !important;
+}
+.ModernConversationHistoryItem {
+		width: calc(100% - 60px) !important;
+}
+/* They used !important here (*sigh*) */
+.ModernConversationInputControl_TextBox.ModernConversationInputControl_TextBox.ModernConversationInputControl_TextBox.ModernConversationInputControl_TextBox {
+		width: calc(100% - 75px) !important;
+}
+/* Fix the layout for emoticons */
+.EmoticonLaunchImage {
+		position: fixed !important;
+		right: 25px !important;
+		bottom: 0px !important;
+}
+.ModernConversationControl_EmoticonPanel {
+		max-width: 500px;
+		right: 15px;
+}
+/* @TODO: fix layout for other popups? */
+/* Like the People filter dropdown */
+
+/* Fix the layout for the "Signing in..."/"Disconnected" screen */
+.sidebar_info,
+.sidebar_info_table {
+	width: 100% !important;
+}
+/* and make it partially see-through */
+.sidebar_info {
+	background: rgba(243, 243, 243, 0.86) !important;
+}
+

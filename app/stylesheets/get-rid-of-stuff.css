@@ -1,0 +1,39 @@
+
+/* "Announcing the Outlook app" (in Login) */
+#brandModeTD,
+/* "Outlook" header (in Login) */
+.signInHeader iframe,
+/* a boring footer (in Login) */
+#footerTD,
+/* advertisements are stupid */
+#adbarContainer,
+/* I forget, but it overlapped with the main application */
+.NotificationBar.BottomBar,
+/* (+) A button to compose emails */
+#NewMessage,
+/* (weird arrow) It took me a looong time to figure out what this is, but it's an Undo button */
+#c_hiconu, /* "id: header icon undo" */
+/* [::] A menu for links to other Microsoft services */
+#c_clogoc,
+/* (gear) Settings (maybe we can bring this back when we have our own settings :) */
+#c_hiconc,
+/* Another boring footer (in Profile) */
+#uxp_ftr_left,
+/* Yeah, get rid of all that*/
+.uglyness {
+	display: none !important;
+}
+
+.ContentRight > *,
+.ContentLeft > * {
+		/* display: none; makes the entire app not load */
+		visibility: hidden;
+}
+.ContentLeft:after {
+		content: ":-)";
+		margin: 15px;
+		display: block;
+		position: absolute;
+		bottom: 0;
+}
+

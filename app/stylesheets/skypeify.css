@@ -1,0 +1,55 @@
+
+
+/* This is Skype */
+.c_clogoimg img,
+.signInHeader {
+		background-image: url("https://skypeblogs.files.wordpress.com/2013/09/skype-logo-feb_2012_rgb_500.png") !important;
+		background-size: contain;
+		background-repeat: no-repeat;
+}
+.c_clogoimg img {
+	width: 76px !important;
+}
+.signInHeader {
+	height: 50px;
+}
+
+
+/* Make the chat look like Skype */
+
+#sidebar {
+	background: white;
+}
+
+.ModernConversationHistoryItem {
+	border-radius: 4px;
+}
+
+.t_received.t_received.t_received.t_received.t_received.t_received {
+	background-color: #C7EDFC !important;
+	color: #000 !important;
+}
+.t_received_pointer.t_received_pointer.t_received_pointer.t_received_pointer {
+	border-top-color: #C7EDFC !important;
+}
+.t_received.t_received.t_received.t_received a {
+	color: #0072C6;
+}
+
+.t_sent.t_sent.t_sent.t_sent.t_sent {
+	background-color: #E5F7FD !important;
+}
+.t_sent_pointer.t_sent_pointer.t_sent_pointer.t_sent_pointer {
+	border-top-color: #E5F7FD !important;
+}
+
+/* They use !important; I have to use repetition */
+
+
+/* Make the header sort of seamless with the rest of the app */
+.t_hdbg {
+	background: white !important;
+}
+.t_hdbg, .t_hdbg * {
+	color: black !important;
+}
