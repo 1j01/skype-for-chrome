@@ -38,7 +38,7 @@ chrome.app.runtime.onLaunched.addListener(function(){
 				webview.addEventListener('contentload', function(){
 					for(var i=0; i<scripts.length; i++){
 						webview.executeScript({
-							file: scripts[i],
+							file: "scripts/" + scripts[i],
 							runAt: 'document_end',
 						});
 					}

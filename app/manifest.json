@@ -1,6 +1,6 @@
 {
 	"name": "Skype",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Chat with your friends.",
 	"icons": {
 		"16": "images/icons/16x16.png",
@@ -25,7 +25,7 @@
 	},
 	"app": {
 		"background": {
-			"scripts": ["app.js"]
+			"scripts": ["chrome-app-main.js"]
 		}
 	},
 	"offline_enabled": false,
