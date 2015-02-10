@@ -23,16 +23,22 @@ var skypeify = function(){
 //	};
 //	toggleChat();
 	
-	/*
+	
 	document.querySelector("#c_hiconm").style.display = "none";
 	var tryToShowTheChat = function(){
 		if(window.$WLXIM){
-			console.log("Show the sidebar");
+			//console.log("Show the sidebar");
 			$WLXIM.showSidebar();
-			// it still doesn't work at first
-			setTimeout(tryToShowTheChat, 50);
+			if($("#sidebar").is(":hidden")){
+				//console.log("The sidebar's still hidden");
+				// it still doesn't work at first
+				setTimeout(tryToShowTheChat, 50);
+			}else{
+				//console.log("The sidebar is shown now (right?)");
+				setTimeout(tryToShowTheChat, 50);
+			}
 		}else{
-			console.log("Can't show the sidebar yet");
+			//console.log("Can't show the sidebar yet");
 			setTimeout(tryToShowTheChat, 5);
 		}
 	};
@@ -40,6 +46,25 @@ var skypeify = function(){
 		console.log(window.$WLXIM, "onload");
 	});
 	tryToShowTheChat();
+	
+	/*
+	var messagelis = [];
+	var pollMessages = function(){
+		var $ul = $("#ModernConversationHistoryControl > ul");
+		$ul.children().each(function(){
+			var li = this;
+			if(messagelis.indexOf(li) < 0){
+				messagelis.push(li);
+				var $li = $(li);
+				var timestamp = $li.attr("ts");
+				///var sendername = $li.find(".ModernConversationHistoryItemNode_Sender").text();
+				/// wait, they didn't actually implement this did they? it's blank; empty
+				var message = $li.find(".ModernConversationHistoryItemNode_Text").text();
+				console.log("new message at", timestamp, ":::\n"+message)
+			}
+		});
+	};
+	setInterval(pollMessages, 50);
 	*/
 	/*
 	chrome.notifications.create("some message id", {

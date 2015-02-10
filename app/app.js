@@ -6,7 +6,7 @@ chrome.app.runtime.onLaunched.addListener(function(){
 			state: 'normal',
 			innerBounds: {
 				minWidth: 500,
-				width: 800,
+				width: 1000,
 				minHeight: 400,
 				height: 700
 			}
@@ -30,7 +30,8 @@ chrome.app.runtime.onLaunched.addListener(function(){
 					});
 				});
 				webview.addEventListener('newwindow', function(e) {
-					e.preventDefault();
+					console.log(e, e.targetUrl);
+					//e.preventDefault();
 					// e.targetUrl contains the target URL of the original link click
 					// or window.open() call: use it to open your own window to it.
 					// Something to keep in mind: window.open() called from the
@@ -38,7 +39,11 @@ chrome.app.runtime.onLaunched.addListener(function(){
 					// (e.g. it doesn't have access to local storage, including cookie
 					// store). You can try to use it here and below, but be prepare that
 					// it may sometimes produce bad results.
-					chrome.tabs.create({ url: e.targetUrl });
+					//chrome.tabs.create({ url: e.targetUrl });
+					var a = document.createElement('a'); 
+					a.href = e.targetUrl; 
+					a.target = '_blank'; 
+					a.click();
 				});
 			}
 		}

@@ -12,18 +12,19 @@
 }
 /* Oh my god */
 .RecentConversationsControl_ConnectedTo {
-	padding-top: 0; /* Make it so you can actually click the "No thanks" link */
+	/* Make it so you can actually click the "No thanks" link */
+	padding-top: 0;
 }
 
 
 
 /* Remove unrelated stuff */
 
-/* "Announcing the Outlook app" (in login) */
+/* "Announcing the Outlook app" (in Login) */
 #brandModeTD,
-/* "Outlook" header (in login) */
+/* "Outlook" header (in Login) */
 .signInHeader iframe,
-/* a boring footer (in login) */
+/* a boring footer (in Login) */
 #footerTD,
 /* advertisements are stupid */
 #adbarContainer,
@@ -32,12 +33,15 @@
 /* (+) A button to compose emails */
 #NewMessage,
 /* (weird arrow) It took me a looong time to figure out what this is, but it's an Undo button */
-#c_hiconu,
+#c_hiconu, /* "id: header icon undo" */
 /* [::] A menu for links to other Microsoft services */
 #c_clogoc,
 /* (gear) Settings (maybe we can bring this back when we have our own settings :) */
-#c_hiconc
-{
+#c_hiconc,
+/* Another boring footer (in Profile) */
+#uxp_ftr_left,
+/* Yeah, get rid of all that*/
+.uglyness {
 	display: none !important;
 }
 
@@ -69,6 +73,7 @@
 }
 
 /* Fix the layout */
+/* Off-center login screen */
 #shellTBL {
 	width: 100% !important;
 	min-width: 460px;
@@ -76,7 +81,7 @@
 #mainTD {
 	width: 460px !important;
 }
-
+/* Make the chat fluid width */
 #sidebar,
 .ModernConversationHistoryControl,
 .ModernConversationControlBottom {
@@ -99,6 +104,18 @@
 		max-width: 500px;
 		right: 15px;
 }
+/* @TODO: fix layout for other popups? */
+/* Like the People filter dropdown */
+
+/* Fix the layout for the "Signing in..."/"Disconnected" screen */
+.sidebar_info,
+.sidebar_info_table {
+	width: 100% !important;
+}
+/* and make it partially see-through */
+.sidebar_info {
+	background: rgba(243, 243, 243, 0.86) !important;
+}
 
 /* Make the chat look a little nicer */
 #sidebar {
@@ -111,13 +128,13 @@
 
 .t_received.t_received.t_received.t_received.t_received.t_received {
 	background-color: #C7EDFC !important;
-		color: #000 !important;
+	color: #000 !important;
 }
 .t_received_pointer.t_received_pointer.t_received_pointer.t_received_pointer {
-		border-top-color: #C7EDFC !important;
+	border-top-color: #C7EDFC !important;
 }
 .t_received.t_received.t_received.t_received a {
-		color: #0072C6;
+	color: #0072C6;
 }
 
 .t_sent.t_sent.t_sent.t_sent.t_sent {
