@@ -21,6 +21,10 @@ chrome.app.runtime.onLaunched.addListener(function(){
 					'fix-your-shit.css',
 					'layout.css'
 				];
+				var scripts = [
+					'notifications.js',
+					'skypeify.js'
+				];
 				webview.addEventListener('loadcommit', function(e){
 					for(var i=0; i<stylesheets.length; i++){
 						webview.insertCSS({
@@ -32,10 +36,12 @@ chrome.app.runtime.onLaunched.addListener(function(){
 				});
 				
 				webview.addEventListener('contentload', function(){
-					webview.executeScript({
-						file: 'notifications.js',
-						runAt: 'document_end',
-					});
+					for(var i=0; i<scripts.length; i++){
+						webview.executeScript({
+							file: scripts[i],
+							runAt: 'document_end',
+						});
+					}
 				});
 				webview.addEventListener('newwindow', function(e){
 					var a = document.createElement('a'); 

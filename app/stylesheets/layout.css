@@ -1,5 +1,4 @@
 
-/* Fix the layout */
 /* Off-center login screen */
 #shellTBL {
 	width: 100% !important;
@@ -21,12 +20,13 @@
 .ModernConversationInputControl_TextBox.ModernConversationInputControl_TextBox.ModernConversationInputControl_TextBox.ModernConversationInputControl_TextBox {
 		width: calc(100% - 75px) !important;
 }
-/* Fix the layout for emoticons */
+/* Emoticons popup button */
 .EmoticonLaunchImage {
 		position: fixed !important;
 		right: 25px !important;
 		bottom: 0px !important;
 }
+/* Emoticons popup */
 .ModernConversationControl_EmoticonPanel {
 		max-width: 500px;
 		right: 15px;
@@ -38,9 +38,5 @@
 .sidebar_info,
 .sidebar_info_table {
 	width: 100% !important;
-}
-/* and make it partially see-through */
-.sidebar_info {
-	background: rgba(243, 243, 243, 0.86) !important;
 }
 
