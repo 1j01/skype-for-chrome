@@ -12,7 +12,7 @@ chrome.app.runtime.onLaunched.addListener(function(){
 			},
 		},
 		function(win){
-			win.contentWindow.onload = function(e){
+			win.contentWindow.onload = function(){
 				var webview = this.document.querySelector('webview');
 				
 				var stylesheets = [
@@ -25,7 +25,7 @@ chrome.app.runtime.onLaunched.addListener(function(){
 					'notifications.js',
 					'skypeify.js'
 				];
-				webview.addEventListener('loadcommit', function(e){
+				webview.addEventListener('loadcommit', function(){
 					for(var i=0; i<stylesheets.length; i++){
 						webview.insertCSS({
 							file: "stylesheets/" + stylesheets[i],
@@ -53,21 +53,22 @@ chrome.app.runtime.onLaunched.addListener(function(){
 				
 				//var targetOrigin = "http://example.com";
 				
-				
-				webview.addEventListener("loadstop", function(event){
-					webview.contentWindow.postMessage({
-						command: 'handshake'
-					}, '*');
-					window.addEventListener("message", function(event){
-						console.log('window received message:', event);
-						if(event.data.command === "notify"){
-							var message = event.data;
+				webview.addEventListener("loadstop", function(){
+					win.contentWindow.addEventListener("message", function(e){
+						console.log('window received message:', e);
+						if(e.data.command === "notify"){
+							var message = e.data;
 							new Notification("Person", {
 								icon: 'images/icons/48x48.png',
 								body: message.text
 							});
 						}
 					});
+					console.log("posting handshake message");
+					webview.contentWindow.postMessage({command: 'handshake'}, '*');
+					// console.debug("Here's window:", window);
+					// console.debug("Here's win.contentWindow:", win.contentWindow);
+					// console.debug("Here's webview.contentWindow:", webview.contentWindow);
 				});
 			}
 		}

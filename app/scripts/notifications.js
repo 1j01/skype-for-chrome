@@ -38,58 +38,44 @@ inject(function(){
 	}, function(){
 		
 	});*/
-/*
-	var active = true;//????
-
-	new Notification("Person", {
-		icon: 'images/icons/48x48.png',
-		body: 'Time to make the toast.'
-	});*/
 	
 	
-	var appWindow, appOrigin;
-	
-	function sendMessage(data) {
-		if (!appWindow || !appOrigin) {
-			return console.error('Cannot send message to Chrome wrapper app - communication channel has not yet been opened');
-		}
-		appWindow.postMessage(data, appOrigin);
-		console.debug('Sent message:', data);
-	}
-	
-	window.addEventListener('message', function(event){
-		
-		//console.debug('Received message:', event.data, 'from', event.origin);
-		console.debug('Received message from', event.origin, event.data);
-		
-		if(event.origin.match(/^chrome-extension:/)){
-			// First message: store appWindow and appOrigin
-			if(!appWindow || !appOrigin){
-				appWindow = event.source;
-				appOrigin = event.origin;
-				console.debug('Opened communication with the Chrome wrapper app.');
-				
-				sendMessage({
-					command: 'handshakereply'
-				});
-			}
-		}
-		
-	});
 	
 	
 });
 
-/*
-chrome.runtime.onMessage.addListener(
-	function(message, sender, sendResponse){
-		new Notification("Person", {
-			icon: 'images/icons/48x48.png',
-			body: message.text
-		});
+
+var appWindow, appOrigin;
+
+function sendMessage(data) {
+	if (!appWindow || !appOrigin) {
+		return console.error('Cannot send message to Chrome wrapper app - communication channel has not yet been opened');
 	}
-);
-*/
+	console.log(new appWindow.Notification("Person", {
+		icon: 'images/icons/48x48.png',
+		body: data.text
+	}));
+	appWindow.postMessage(data, appOrigin);
+	console.debug('Sent message:', data, 'to', appWindow, appOrigin);
+}
 
-
-
+window.addEventListener('message', function(e){
+	
+	//console.debug('Received message:', event.data, 'from', event.origin);
+	console.debug('Received message from', e.origin, e.data);
+	
+	if(e.origin.match(/^chrome-extension:/)){
+		// First message: store appWindow and appOrigin
+		if(!appWindow || !appOrigin){
+			appWindow = e.source;
+			appOrigin = e.origin;
+			console.debug('Opened communication with the Chrome app context.');
+			
+			sendMessage({command: 'handshakereply'});
+		}
+	}
+	
+});
+setInterval(function(){
+sendMessage({text:"AAAAAAAAAAAAAAAAAAAAAAAATRGGRGYYY!!!!!"})
+},1500);
