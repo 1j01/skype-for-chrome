@@ -49,6 +49,26 @@ chrome.app.runtime.onLaunched.addListener(function(){
 					a.target = '_blank'; 
 					a.click();
 				});
+				
+				
+				//var targetOrigin = "http://example.com";
+				
+				
+				webview.addEventListener("loadstop", function(event){
+					webview.contentWindow.postMessage({
+						command: 'handshake'
+					}, '*');
+					window.addEventListener("message", function(event){
+						console.log('window received message:', event);
+						if(event.data.command === "notify"){
+							var message = event.data;
+							new Notification("Person", {
+								icon: 'images/icons/48x48.png',
+								body: message.text
+							});
+						}
+					});
+				});
 			}
 		}
 	);
